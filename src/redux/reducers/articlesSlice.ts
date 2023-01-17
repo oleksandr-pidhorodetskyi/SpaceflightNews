@@ -49,7 +49,7 @@ const articleSlice = createSlice({
 	name: 'article',
 	initialState,
 	reducers: {
-		//GET ALL
+		//GET ALL ARTICLES WHICH CONTAINS IN TITLE AND DESC KEYWORD
 		getArticlesStart: (state) => {
 			state.isFetching = true;
 			state.error = false;
