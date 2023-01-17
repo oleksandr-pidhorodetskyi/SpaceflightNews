@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface Launches {
 	id: string;
 	provider: string;
@@ -20,14 +20,14 @@ interface Article {
 	events: Events[];
 }
 
-interface ArticlesState {
+interface ArticleState {
 	currentArticle: Article;
 	articles: Article[];
 	isFetching: boolean;
 	error: boolean;
 }
 
-const initialState: ArticlesState = {
+const initialState: ArticleState = {
 	currentArticle: {
 		id: 0,
 		featured: false,
@@ -54,7 +54,7 @@ const articleSlice = createSlice({
 			state.isFetching = true;
 			state.error = false;
 		},
-		getArticlesSuccess: (state, action) => {
+		getArticlesSuccess: (state, action: PayloadAction<Article[]>) => {
 			state.isFetching = false;
 			state.articles = action.payload;
 		},
