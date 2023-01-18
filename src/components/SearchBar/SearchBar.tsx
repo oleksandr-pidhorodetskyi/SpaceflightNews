@@ -5,9 +5,18 @@ import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
 import searchIcon from './img/search-icon.png';
 
-const SearchBar = () => {
+interface SearchProps {
+	setKeywords: React.Dispatch<React.SetStateAction<string>>;
+	keywords: string;
+}
+
+const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
+	const handleChange = (e: any) => {
+		e.preventDefault();
+		setKeywords(e.target.value);
+	};
 	return (
-		<div>
+		<Box component='div' sx={{ mb: '34px' }}>
 			<InputLabel
 				sx={{ fontWeight: 600, color: '#363636', mb: '10px' }}
 				variant='standard'
@@ -24,6 +33,7 @@ const SearchBar = () => {
 					alignItems: 'center',
 					boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
 					borderRadius: '5px',
+					mb: '6px'
 				}}
 			>
 				<img className='search-icon' src={searchIcon} alt='search' />
@@ -32,9 +42,12 @@ const SearchBar = () => {
 					disableUnderline={true}
 					sx={{ display: 'block', flex: 1, pr: 1 }}
 					placeholder='The most successful IT companies in 2020'
+					value={keywords}
+					onChange={handleChange}
 				/>
 			</Box>
-		</div>
+			<Box sx={{ width: 600, borderBottom: '1px solid #D9D9D9' }} />
+		</Box>
 	);
 };
 
