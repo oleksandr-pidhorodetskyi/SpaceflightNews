@@ -16,7 +16,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 		setKeywords(e.target.value);
 	};
 	return (
-		<Box component='div' sx={{ mb: '34px' }}>
+		<Box component='div' className='search__container' sx={{ mb: '34px' }}>
 			<InputLabel
 				sx={{ fontWeight: 600, color: '#363636', mb: '10px' }}
 				variant='standard'
@@ -27,7 +27,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 				component='div'
 				sx={{
 					border: '1px solid #EAEAEA',
-					width: 600,
+					maxWidth: 600,
 					height: 50,
 					display: 'flex',
 					alignItems: 'center',
@@ -38,7 +38,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 			>
 				<img className='search-icon' src={searchIcon} alt='search' />
 				<Input
-					className='searchBar__input'
+					id='searchBar__input'
 					disableUnderline={true}
 					sx={{ display: 'block', flex: 1, pr: 1 }}
 					placeholder='The most successful IT companies in 2020'
@@ -46,7 +46,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 					onChange={handleChange}
 				/>
 			</Box>
-			<Box sx={{ width: 600, borderBottom: '1px solid #D9D9D9' }} />
+			<Box sx={{ maxWidth: 600, borderBottom: '1px solid #D9D9D9' }} />
 		</Box>
 	);
 };

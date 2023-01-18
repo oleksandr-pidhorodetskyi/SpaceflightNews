@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ArticlesList from '../components/ArticlesList/ArticlesList';
 import Loader from '../components/Loder';
@@ -15,19 +16,16 @@ const Home = () => {
 	useEffect(() => {
 		getArticles(keywords, dispatch);
 	}, [dispatch, keywords]);
-	useEffect(() => {
-		console.log(keywords);
-	}, [keywords]);
 
 	return (
-		<main className='main__container'>
+		<Box component='main' className='main__container' sx={{pt: '50px', pb: '63px'}}>
 			<SearchBar setKeywords={setKeywords} keywords={keywords} />
 			{isFetching ? (
 				<Loader />
 			) : (
 				<ArticlesList keywords={keywords} articles={data} />
 			)}
-		</main>
+		</Box>
 	);
 };
 

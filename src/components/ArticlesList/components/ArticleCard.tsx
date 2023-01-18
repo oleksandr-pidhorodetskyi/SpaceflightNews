@@ -15,9 +15,10 @@ import { formatDate } from '../../../helpers/formatDate';
 import { Box } from '@mui/system';
 import calendarIcon from './img/calendar.png';
 import arrowRight from './img/arrow-right.png';
+import { useNavigate } from 'react-router-dom';
 
 interface Article {
-	id: 0;
+	id: number;
 	featured: boolean;
 	title: string;
 	url: string;
@@ -42,6 +43,7 @@ const ArticleCard = ({
 	article: Article;
 	keywords: string;
 }) => {
+	const navigate = useNavigate();
 	let date: Date = new Date(article.publishedAt);
 	return (
 		<Card
@@ -101,12 +103,13 @@ const ArticleCard = ({
 			</Box>
 			<CardActions sx={{ px: '25px' }}>
 				<Button
+					onClick={() => navigate(`/articles/${article.id}`)}
 					size='small'
 					color='inherit'
 					sx={{ fontWeight: 700, fontSize: '16px' }}
 				>
 					Read more
-					<img src={arrowRight} alt='calendar' className='arrow-icon' />
+					<img src={arrowRight} alt='Arrow right' className='arrow-icon' />
 				</Button>
 			</CardActions>
 		</Card>

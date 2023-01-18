@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Article from './pages/Article';
+import Article from './pages/Article/Article';
 import './app.scss';
 import { createTheme, ThemeProvider } from '@mui/material';
 const App = () => {

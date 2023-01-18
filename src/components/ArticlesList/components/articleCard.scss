@@ -9,14 +9,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: 400px;
-	height: 530px;
-	@media screen and (max-width: 756px) {
-		height: 580px;
-	}
-	@media screen and (max-width: 600px) {
-		height: 530px;
-	}
-	
+	height: 100%;
 }
 .card__action-area {
 	display: flex;

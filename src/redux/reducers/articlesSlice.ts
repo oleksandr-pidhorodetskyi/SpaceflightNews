@@ -8,7 +8,7 @@ interface Events {
 	provider: string;
 }
 interface Article {
-	id: 0;
+	id: number;
 	featured: boolean;
 	title: string;
 	url: string;
@@ -62,9 +62,28 @@ const articleSlice = createSlice({
 			state.isFetching = false;
 			state.error = true;
 		},
+		//GET ONE ARTICLE BY ID
+		getOneArticleStart: (state) => {
+			state.isFetching = true;
+			state.error = false;
+		},
+		getOneArticleSuccess: (state, action: PayloadAction<Article>) => {
+			state.isFetching = false;
+			state.currentArticle = action.payload;
+		},
+		getOneArticleFailure: (state) => {
+			state.isFetching = false;
+			state.error = true;
+		},
 	},
 });
 
-export const { getArticlesStart, getArticlesSuccess, getArticlesFailure } =
-	articleSlice.actions;
+export const {
+	getArticlesStart,
+	getArticlesSuccess,
+	getArticlesFailure,
+	getOneArticleStart,
+	getOneArticleSuccess,
+	getOneArticleFailure,
+} = articleSlice.actions;
 export default articleSlice.reducer;

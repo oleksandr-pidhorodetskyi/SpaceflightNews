@@ -3,7 +3,7 @@ import React from 'react';
 import ArticleCard from './components/ArticleCard';
 
 interface Article {
-	id: 0;
+	id: number;
 	featured: boolean;
 	title: string;
 	url: string;
