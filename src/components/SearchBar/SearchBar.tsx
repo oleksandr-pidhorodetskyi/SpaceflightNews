@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import './searchBar.scss';
 import { InputLabel } from '@mui/material';
 import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
 import searchIcon from './img/search-icon.png';
+import { useDebounce } from 'usehooks-ts';
 
 interface SearchProps {
 	setKeywords: React.Dispatch<React.SetStateAction<string>>;
@@ -11,10 +12,16 @@ interface SearchProps {
 }
 
 const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
-	const handleChange = (e: any) => {
+	const [value, setValue] = useState<string>('');
+	const debouncedValue = useDebounce<string>(value, 500);
+
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
-		setKeywords(e.target.value);
+		setValue(e.target.value);
 	};
+	useEffect(() => {
+		setKeywords(debouncedValue);
+	}, [debouncedValue]);
 	return (
 		<Box component='div' className='search__container' sx={{ mb: '34px' }}>
 			<InputLabel
@@ -33,7 +40,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 					alignItems: 'center',
 					boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
 					borderRadius: '5px',
-					mb: '6px'
+					mb: '6px',
 				}}
 			>
 				<img className='search-icon' src={searchIcon} alt='search' />
@@ -42,7 +49,7 @@ const SearchBar = ({ setKeywords, keywords }: SearchProps) => {
 					disableUnderline={true}
 					sx={{ display: 'block', flex: 1, pr: 1 }}
 					placeholder='The most successful IT companies in 2020'
-					value={keywords}
+					value={value}
 					onChange={handleChange}
 				/>
 			</Box>
