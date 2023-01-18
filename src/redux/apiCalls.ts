@@ -18,7 +18,6 @@ export const getArticles = async (keyWords: string, dispatch: AppDispatch) => {
 			);
 			dispatch(getArticlesSuccess(res.data));
 		} else {
-			console.log('clear');
 			dispatch(getArticlesSuccess([]));
 		}
 	} catch (err) {

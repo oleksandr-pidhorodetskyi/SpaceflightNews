@@ -49,6 +49,7 @@ const Article = () => {
 									onClick={() => navigate('/')}
 									size='small'
 									color='inherit'
+									className='btn-underline-animation'
 									sx={{ fontWeight: 700, fontSize: '16px' }}
 								>
 									<img

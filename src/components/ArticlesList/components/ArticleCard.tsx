@@ -61,6 +61,7 @@ const ArticleCard = ({
 					width='400'
 					image={article.imageUrl}
 					alt='Article'
+					className='card__img'
 				/>
 				<CardContent className='card__content' sx={{ p: '25px' }}>
 					<Typography
@@ -107,6 +108,7 @@ const ArticleCard = ({
 					size='small'
 					color='inherit'
 					sx={{ fontWeight: 700, fontSize: '16px' }}
+					className='btn-underline-animation'
 				>
 					Read more
 					<img src={arrowRight} alt='Arrow right' className='arrow-icon' />
