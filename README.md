@@ -5,15 +5,15 @@ In that app, you have search input in which you can write down all keywords for 
 ## How to Use
 Clone or download this repositoty.
 Install the dependencies:
-<br>
+<br><br>
 `npm i`
-<br>
+<br><br>
 Then you can start an App:
-<br>
+<br><br>
 `npm run dev`
-<br>
+<br><br>
 ## Pages
-"/" - Home Page
+"/" - Home Page<br>
 "/articles/:id" - Specific article page
 ## Technologies
 - Scss
