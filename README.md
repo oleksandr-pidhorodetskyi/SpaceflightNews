@@ -16,12 +16,11 @@ Then you can start an App:
 "/" - Home Page
 "/articles/:id" - Specific article page
 ## Technologies
-- Scss, 
-- React, 
-- Redux(redux-toolkit), 
-- Typescript, 
-- MUI,
-- Axios.
-
-##Demo
+- Scss
+- React
+- Redux(redux-toolkit)
+- Typescript
+- MUI
+- Axios
+## Demo
 [SpaceflightNews demo](https://pidhorodetskyi-spaceflight-news.netlify.app/)
