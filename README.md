@@ -11,9 +11,8 @@ Install the dependencies:
 Then you can start an App:
 <br><br>
 `npm run dev`
-<br><br>
 ## Pages
-"/" - Home Page<br>
+"/" - Home Page<br><br>
 "/articles/:id" - Specific article page
 ## Technologies
 - Scss
