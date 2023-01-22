@@ -5,9 +5,13 @@ In that app, you have search input in which you can write down all keywords for 
 ## How to Use
 Clone or download this repositoty.
 Install the dependencies:
+<br>
 `npm i`
+<br>
 Then you can start an App:
+<br>
 `npm run dev`
+<br>
 ## Pages
 "/" - Home Page
 "/articles/:id" - Specific article page
@@ -18,5 +22,6 @@ Then you can start an App:
 - Typescript, 
 - MUI,
 - Axios.
+
 ##Demo
 [SpaceflightNews demo](https://pidhorodetskyi-spaceflight-news.netlify.app/)
